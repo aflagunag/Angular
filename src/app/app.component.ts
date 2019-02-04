@@ -12,5 +12,6 @@ export class AppComponent {
 
   irLogin() {
     this.login = false;
+    
   }
 }
