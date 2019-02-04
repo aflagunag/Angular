@@ -1,0 +1,57 @@
+
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 140px;
+    margin-bottom: 140px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+}
+    
+  .input {
+    width: 100%;
+  }
+  
+  .button {
+    background: #007bff;
+    color: white;
+    height: 38px;
+    font-size: larger;
+    width: -webkit-fill-available;
+    text-transform: uppercase
+    }
+
+  .caja-botones button, .caja-botones img {
+    float: right;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-transform: uppercase;
+  }
+  .form-group{
+      
+    margin-left: 190px;
+    margin-right: 190px;
+    margin: 190 auto;
+
+  }
+
+	/* .form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	} */
+	

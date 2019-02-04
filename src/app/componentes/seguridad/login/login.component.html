@@ -1,0 +1,230 @@
+<div *ngIf = 'this.display == 0'>
+  <div class="wrapper">
+    <form class="form-signin">
+      <h2 class="form-signin-heading" style="text-align:center">¡Hola! Ingresa tu usuario</h2>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <mat-form-field class="input">
+                <mat-icon matSuffix>{{visibility}}</mat-icon>
+              <input 
+              
+              matInput placeholder="Usuario"
+              required = 'true'
+              >
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-form-field class="input">
+              <input 
+              matInput placeholder="Contraseña" 
+              required = 'true' 
+              [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+          </div>
+          
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" style="width: -webkit-fill-available;" >Ingresar</button>
+
+      <button type="button" class="btn btn-link" style="margin-left: 9px;COLOR: #1B1B1B;font-size: 16px;" (click)="display = 1">No tiene usuario? Registrese Aqui</button>
+    
+      <!-- <a href="#myModal" class="trigger-btn" data-toggle="modal">No tiene usuario? Registrese Aqui</a> -->
+
+    </form>
+  </div>
+</div>
+
+<!-- ADICIONAR PERSONA -->
+<div *ngIf = 'this.display == 1'>
+    <form class ="form-group">
+  <div class="container">
+    <div class="row">
+
+        <h2 class="col-md-12">Registro de Usuario </h2>
+
+        <br>
+      
+        <div class="col-md-6">
+          <mat-form-field class="input">
+            <input matInput placeholder="Usuario"
+            name="username" 
+            [(ngModel)] ="loginData.username" 
+            required >
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+          <mat-form-field class="input">
+            <input 
+              matInput placeholder='Contraseña'
+              name='contrasena' 
+              [(ngModel)] ='loginData.contrasena' 
+              required 
+              [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+          <mat-form-field class="input">
+            <input 
+              matInput placeholder="Primer Nombre"
+              name='primerNombre' 
+              [(ngModel)] = 'loginData.primerNombre' 
+              required = 'true'
+            >
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+          <mat-form-field class="input">
+            <input 
+              matInput placeholder="Primer Apellido"
+              name='primerApellido' 
+              [(ngModel)] = 'loginData.primerApellido' 
+              required
+            >
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-lg-6">
+          <mat-form-field class="input">
+            <input 
+              matInput placeholder="Email"
+              name='email' 
+              [(ngModel)] = 'loginData.email'
+              required
+            >
+          </mat-form-field>
+        </div>  
+
+        <div class='col-md-12 caja-botones'>
+          <button class='btn btn-primary' (click)='guardarLogin()' >Guardar</button>
+          <button class='btn btn-primary' (click)='display = 0'>Volver</button>
+        </div>
+      
+      </div>      
+    </div>
+  </form>
+</div>
+
+
+
+<!-- <div class="container">
+    <div class="row ">
+      <div class="col-md-12" ng-if="display == 0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+              <th scope="col" style='text-align: center'> <mat-icon class='material-icons' title='Adicionar'>add_circle_outline</mat-icon></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>
+                <mat-icon>search
+                </mat-icon>
+                <mat-icon>edit
+                </mat-icon>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>
+                <mat-icon>search
+                </mat-icon>
+                <mat-icon>edit
+                </mat-icon>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>
+                <mat-icon>search
+                </mat-icon>
+                <mat-icon>edit
+                </mat-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6" ng-if="display == 1">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+  
+      <div class="col-md-3">
+        <mat-form-field class="input">
+          <input matInput placeholder="Favorite food">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-3">
+        <mat-form-field class="input">
+          <input matInput placeholder="Favorite food">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-3">
+        <mat-form-field class="input">
+          <input matInput placeholder="Favorite food">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-3">
+        <mat-form-field class="input">
+          <input matInput placeholder="Favorite food">
+        </mat-form-field>
+      </div>
+  
+    </div>
+  </div> -->
