@@ -7,10 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  login:boolean = true;
+  login: boolean = true;
+  display = 'none';
 
   irLogin() {
     this.login = false;
     console.log("ir Login")
+  }
+
+  openModal() {
+    // this.login = false;
+    console.log("Modal")
+    this.display = 'block';
+  }
+
+  closeModal() {
+    this.display = 'none';
   }
 }

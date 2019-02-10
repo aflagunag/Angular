@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   display: number;
   hide = true;
   loginData = {
-    adClientId : '0',
-    adOrgId : '1000',
+    adClientId: '0',
+    adOrgId: '1000',
     adRoleId: null,
     estado: null
   };
@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.display = 0;
     console.log("entro Login");
-    //  $('#myModal').modal('show')
   }
 
   guardarLogin() {
@@ -32,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     console.log("11111111111111111", this.loginData)
     this.dataApi.guardarLogin(this.loginData)
-    .subscribe((resp) => console.log ("11111111111111", resp))
+      .subscribe((resp) => console.log("11111111111111", resp))
   }
 
 }
